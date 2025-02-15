@@ -11,14 +11,14 @@
  */
 class Solution {
 public:
-    void buildGraph(TreeNode* root,unordered_map<int,vector<int>> &adj,TreeNode* parent){
-        if(!root) return;
+    void buildGraph(TreeNode* node,unordered_map<int,vector<int>> &adj,TreeNode* parent){
+        if(!node) return;
         if(parent){
-            adj[root->val].push_back(parent->val);
-            adj[parent->val].push_back(root->val);
+            adj[node->val].push_back(parent->val);
+            adj[parent->val].push_back(node->val);
         }
-        buildGraph(root->left,adj,root);
-        buildGraph(root->right,adj,root);
+        buildGraph(node->left,adj,node);
+        buildGraph(node->right,adj,node);
     }
     int amountOfTime(TreeNode* root, int start) {
         unordered_map<int,vector<int>> adj;
