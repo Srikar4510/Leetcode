@@ -9,7 +9,7 @@ public:
         while(i<n && s[i]==' '){
             i++;
         }
-
+        if(i==n) return 0;
         //check for sign and move to nect index
         if(s[i]=='-'){
             sign=-1;
