@@ -6,7 +6,7 @@ public:
 
         for(int i=0;i<n;i++){
             int val = nums[i];
-            int rem = target-val;
+            int rem = target - val;
             if(mp.find(rem)!=mp.end()){
                 return {mp[rem],i};
             }
@@ -15,4 +15,3 @@ public:
         return {};
     }
 };
-
